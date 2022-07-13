@@ -114,13 +114,14 @@ h1,h2,h3,h4,h5,h6 {
 .header_inner {
     display: flex;
     justify-content: space-between;
+    padding-right: 10px;
 }
 
 .header_logo {
     margin-left: 30px;
     font-size: 30px;
     font-weight: 700;
-    /* color: rgb(220, 0, 0); */
+    
     color: #007aff;
     transition: color .2s linear;
     text-decoration: none; 
@@ -317,6 +318,7 @@ h1,h2,h3,h4,h5,h6 {
 .text_tocenter {
     text-align: center;
     border-bottom: 1px solid #cecece;
+    width: 30%;
 }
 /* tr */
 
@@ -333,6 +335,11 @@ h1,h2,h3,h4,h5,h6 {
 /* Sections */
 .section {
     padding-top: 100px;
+}
+
+.section_about {
+    padding-top: 100px;
+    width: 100%;
 }
 
 .section_header {
@@ -354,6 +361,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .section_text {
     padding: 20px 30px;
+    width: 100%;
     max-width: 1000 px;
     text-align: left;
     line-height: 2;
@@ -362,6 +370,16 @@ h1,h2,h3,h4,h5,h6 {
 .section_text p {
 text-align: justify;
 }
+
+table{
+    width: 100%;
+}
+
+table tbody tr td {
+    word-break: break-word;
+}
+
+
 
 /* ABOUT logo*/
 /* .about_logo {
@@ -454,7 +472,7 @@ text-align: justify;
 
 .calc_header {
     margin-bottom: 15px;
-    text-align: justify;
+    text-align: left;
     font-size: 30px;
     color: #4a4a4a;
 }
@@ -608,7 +626,10 @@ input[type=number]:focus {
     cursor: pointer;
 }
 
-
+.input_span {
+    text-align: center;
+    padding-top: 7px;
+}
 
 
 
@@ -699,6 +720,7 @@ input[type=number]:focus {
     flex-direction: column;
     align-items: left;
     margin-left: 30px;
+    padding-right: 10px;
 }
 
 .contacts_header {
@@ -891,6 +913,7 @@ input[type=number]:focus {
 
     .intro_welcome {
         font-size:30px;
+        margin-bottom: 20px;
     }
     
     .intro_logo { 
@@ -949,6 +972,14 @@ input[type=number]:focus {
 
     .blog_text h1 {
         font-size: 22px;
+    }
+
+    .calc_header {
+        font-size: 22px;
+    }
+
+    .calc_inputRight_heading {
+        font-size: 14px;
     }
     
     .blog_text p {
@@ -1042,6 +1073,28 @@ input[type=number]:focus {
         font-weight: 350;
     }
 
+    .calc_header {
+        font-size: 16px;
+    }
+
+    .calc_inputRight_heading {
+        font-size: 12px;
+    }
+
+    .input_span {
+        font-size: 12px;
+    }
+
+    .calc_output_name {
+        font-size: 12px;
+    }
+
+
+
+
+    .calc_footer {
+        font-size: 10px;
+    }
     .ending_logo {
         font-size: 27px;
         font-weight: 600;
@@ -1053,20 +1106,74 @@ input[type=number]:focus {
     }
 }
 
-@media (max-width: 650px) {
-    .intro_welcome {
-        font-size:40px;
+@media (max-width: 750px) {
+    .calc_inner {
+        height: 600px;
+        width: 100%;
+        flex-direction: column;
     }
     
-    .intro_logo { 
-        font-size:50px;
+    .calc_input {
+        height: 40%;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        border-right: none;
+        border-bottom: #e6e6e6 3px solid;
+        padding: 25px 0;
     }
     
-    .intro_slogan {
-        font-size:25px;
-        line-height: 3;
+    .calc_inputLeft{
+        height: 100%;
+        width: 65%;
+
+        justify-content: space-between;
+        padding: 0 30px;
+    }
+  
+
+    .field__mark.fs20 {
+        font-size: 16px;
+    }
+    
+    .field__mark {
+        font-size: 13px;
+        font-weight: 400;
+        position: relative;
+        display: inline-block;
+        width: fit-content;
+        margin-top: 20px;
+        text-align: left;
+        vertical-align: top;
+        letter-spacing: normal;
+        color: #767676;
+    }
+    
+    .calc_inputRight{
+        height: 100%;
+        width: 35%;
+        justify-content: space-between;
+        padding-bottom: 30px;
     }
 
+    input[type=number] {
+        height: 35px;
+        width: 72%;
+        border: #8c8c8c 2px solid;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 16px;
+        font-weight: 500;
+    }
+    
+    .calc_output {
+        height: 60%;
+        width: 100%;
+        padding: 20px 20px 20px 35px;
+    }
+}
+
+@media (max-width: 650px) {
     .section {
         padding-top: 40px;
     }
@@ -1213,49 +1320,50 @@ input[type=number]:focus {
         max-width: 120px;
     }
 
+    table tbody tr {
+        font-size: 12px;
+    }
+
 /* Services */
     .section_services {
         margin-top: 10px;
         padding: 0 10px;
     }
     
-    .dropbtn {
-        padding: 8px;
-        font-size: 11px;
-        font-weight: 550;
-        letter-spacing: 1px;
-    }
-    
-    .dropbtn:hover  {
-        font-weight: 650;
-        font-size: 12.5px;
-    }
-    .dropbtn.active {
-        font-size: 12.5px;
+    .calc_inner {
+        height: 800px;
     }
 
-    .content {
-        padding: 10px;
+    .calc_input {
+        height: 50%;
+        flex-direction: column;
     }
 
-    .dropdown-content {
-        right: 20px;
+    .calc_inputLeft {
+        width: 100%;
+        height: 55%;
+        padding: 0 20px;
+    }
+
+    input[type=range] {
+        width: 90%;
+    }
+
+    .calc_inputRight {
+        width: 100%;
+        height: 45%;
         padding-top: 20px;
+        padding-bottom: 0;
     }
 
-    .service_block {
-        margin: 20px 30px;    
+    .calc_amount {
+        margin-bottom: 15px;
     }
 
-    .service_block h2 {
-        font-size: 22px;
-        font-weight: 600;
+    .calc_output {
+        height: 50%;
     }
-    
-    .service_block ul li {
-        font-size: 15px;
-        font-weight: 350;
-    }
+
 /* Services */
 
 /* Публикации */
@@ -1309,15 +1417,15 @@ input[type=number]:focus {
 
 @media (max-width: 450px) {
     .intro_welcome {
-        font-size:40px;
+        font-size:25px;
     }
     
     .intro_logo { 
-        font-size:50px;
+        font-size:35px;
     }
     
     .intro_slogan {
-        font-size:25px;
+        font-size:15px;
     }
 
     .tabs_nav {
@@ -1325,33 +1433,30 @@ input[type=number]:focus {
         width: 80%;
     }
 
-    .blog_item {
-        width: 100%;
-        max-width: 250px;
-        margin: 0 5px;
+    /* table tbody tr td {
+        width: 50%;
+    } */
+
+    .content {
+        padding: 20px 0;
     }
 
-    .date p {
-        font-size: 12px;
+    td:last-child {
+        width: 60%;
     }
 
-    .blog_text h1 {
-        font-size: 16px;
+    .label {
+        width: 40%;
     }
-
-    .blog_text p {
-        font-size: 12px;
-    }
-
-    .blog_text a {
-        font-size: 12px;
+    .text_tocenter {
+        width: 30%;
     }
 }
 
 @media (max-width: 350px) {
     .header_logo {
         margin: 0 0 0 20px;
-        font-size: 22px;
+        font-size: 18px;
         font-weight: 600;
     }
     .header_slogan {
@@ -1367,7 +1472,7 @@ input[type=number]:focus {
     }
     
     .intro_logo { 
-        font-size:40px;
+        font-size:30px;
     }
     
     .intro_slogan {
@@ -1380,41 +1485,22 @@ input[type=number]:focus {
         width: 100%;
     }
 
-    .dropbtn {
-        padding: 5px;
-        font-size: 10px;
-        font-weight: 500;
-        letter-spacing: 1px;
-    }
-    
-    .dropbtn:hover  {
-        font-weight: 650;
-        font-size: 12px;
-    }
-    
-    .dropbtn.active {
-        font-size: 12px;
+    .calc_inputLeft {
+        display: none;
     }
 
-    .blog_item {
+    .calc_input {
+        height: 35%;
+        justify-content: center;
+    }
+
+    .calc_inputRight {
         width: 100%;
-        max-width: 210px;
-        margin: 0 2px;
+        justify-content: space-around;
     }
 
-    .date p {
-        font-size: 10px;
+    .calc_output {
+        height: 65%;
     }
 
-    .blog_text h1 {
-        font-size: 14px;
-    }
-
-    .blog_text p {
-        font-size: 10px;
-    }
-
-    .blog_text a {
-        font-size: 10px;
-    }
 }
