@@ -104,6 +104,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .header.red {
+    background-color:#016CBC;
     border-color: #016CBC;
     box-shadow: 0 5px 10px rgba(0,0,0,0.3);
 }
@@ -1176,6 +1177,7 @@ input[type=number]:focus {
         margin: 0 0 0 30px;
         font-size: 24px;
         font-weight: 600;
+        display: flex;
     }
     .slogan {
         margin-left: 70px;
