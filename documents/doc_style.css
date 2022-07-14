@@ -31,7 +31,6 @@ h1,h2,h3,h4,h5,h6 {
 .main_image{
     width: 100%;
     height: 100vh;
-    /* background: url("img/intro3.jpg") center no-repeat; */
     background-color: #ccc;
     background-size: cover;
     -webkit-background-size: cover;
@@ -82,7 +81,6 @@ h1,h2,h3,h4,h5,h6 {
     text-align: center;
     font-size:50px;
     line-height: 5;
-    /* font-family: 'Kaushan Script', cursive; */
 }
 /* Для лого */
 
@@ -97,7 +95,6 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .header.fixed {
-    /* background-color: #dc0e0e; */
     background-color: #016CBC;
     box-shadow: 0 5px 10px rgba(0,0,0,0.3);
     position:fixed;
@@ -105,11 +102,9 @@ h1,h2,h3,h4,h5,h6 {
     top: 0;
     left: 0;
     right: 0;
-    /* transform: translate3d(0,0,0); */
 }
 
 .header.red {
-    /* background-color: #dc0e0e; */
     border-color: #016CBC;
     box-shadow: 0 5px 10px rgba(0,0,0,0.3);
 }
@@ -179,29 +174,15 @@ h1,h2,h3,h4,h5,h6 {
     transition: all .2s linear;
 }
 
-/* .nav_link::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 2px;
-    display: none;
-    position: absolute;
-    background-color: rgb(255, 255, 255);
-    background-color: #007aff;
-    top: 100%;
-    left: 0;
-    z-index: 1;
-} */
+.hovered {
+    color: #3998fe;
+}
 
 .nav_link:hover {
-    /* color: black; */
     color: #3998fe;
     font-weight: 700;
 }
 
-/* .nav_link:hover::after {
-    display: block;
-} */
 
 /* Burger menu btn */
 .nav_toggle {
@@ -216,7 +197,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .header.fixed .nav_toggle{
-    top: 30px;
+    top: 21px;
 }
 
 /* превратить в крестик,если актив есть*/
@@ -280,49 +261,6 @@ h1,h2,h3,h4,h5,h6 {
     text-align: right;
     line-height: 0.9;
 }
-/* tr */
-/* .clients {
-    background-color: rgb(170, 170, 170);
-    color: #fff;
-    text-transform: uppercase;
-    text-align: center;
-    font-size: large;
-    font-weight: 700;
-    padding: 5px 0;
-}
-
-.clients_box {
-    display: flex;
-    flex-direction: row;
-    padding-top: 15px;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    z-index: 1000;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    justify-content: space-between;  
-}
-
-.client {
-    border-radius: 10%;
-    width: 100%;
-    max-width: 250px;
-    border-style: outset;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    margin: 0 auto 0 auto;
-    position: relative;
-    transition: all 0.2s linear;
-}
-
-.client:hover {
-    box-shadow: 6px 6px 35px 10px rgb(132, 132, 132);
-    transform: scale(1.1, 1.1);
-} */
 
 .label {
     background-color: #f1f1f1;
@@ -333,7 +271,6 @@ h1,h2,h3,h4,h5,h6 {
     border-bottom: 1px solid #cecece;
     width: 30%;
 }
-/* tr */
 
 .underline_grey {
     margin-top: 20px;
@@ -400,7 +337,6 @@ table tbody tr td {
 
 /* Services */
 .service_header {
-    /* text-transform: uppercase; */
     font-size: 17px;
     color: rgb(0, 0, 0);
 }
@@ -449,7 +385,6 @@ table tbody tr td {
 }
 
 .dropbtn.active {
-    /* background-color: #4ba2ff; */
     background-color: #016CBC;
     font-size: 18px;
 }
@@ -511,259 +446,6 @@ table tbody tr td {
 /* section_upload */
 
 
-/* Окно контента */
-/* .content {
-    background-color: #ffffff;
-    padding: 30px;
-}
-
-.content_box {
-    display: flex;
-    flex-direction: column;
-    background-color: #F2F2F2;
-    width: auto;
-    max-width: 1200;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
-    right: 30px;
-    padding: 30px;
-    z-index: 3000;
-}
-
-.calc_header {
-    margin-bottom: 15px;
-    text-align: left;
-    font-size: 30px;
-    color: #4a4a4a;
-}
-
-.calc_inner {
-    height: 500px;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    border: #e6e6e6 3px solid;
-    border-radius: 10px;
-    background-color: #fff;
-}
-
-.calc_input {
-    height: 100%;
-    width: 70%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    border-right: #e6e6e6 3px solid;
-}
-
-.calc_inputLeft{
-    height: 100%;
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    padding: 0 30px 0 50px;
-} */
-/* 
-.range_uah {
-    margin-top: 15px;
-}
-
-.range_uah_input, .range_month_input {
-    cursor: pointer;
-}
-
-.marking {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.mark_row {
-    width: 33.33333333%;
-}
-
-.text-center {
-    text-align: center;
-}
-
-.text-right {
-    text-align: right;
-}
-
-.mrg_left {
-    margin-left: 12px;
-}
-.mrg_right{
-    margin-right: 15px;
-}
-.field__mark.fs20 {
-    font-size: 20px;
-    font-weight: 700;
-}
-
-.field__mark {
-    font-size: 13px;
-    font-weight: 400;
-    position: relative;
-    display: inline-block;
-    width: fit-content;
-    margin-top: 20px;
-    text-align: left;
-    vertical-align: top;
-    letter-spacing: normal;
-    color: #767676;
-}
-
-.field__mark:before {
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    width: 1px;
-    height: 8px;
-    content: '';
-    background-color: #767676;
-}
-
-
-.calc_inputRight{
-    height: 100%;
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    padding-bottom: 30px;
-}
-
-.calc_inputRight_heading {
-    color: #4a4a4a;
-    margin-bottom: 3px;
-}
-
-input[type=range] {
-    width: 94%;
-    margin: 0 25px 0 10px;
-}
-
-input[type=number] {
-    height: 40px;
-    width: 72%;
-    border: #8c8c8c 2px solid;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 16px;
-    font-weight: 500;
-}
-
-input[type=number]:focus {
-    background-color: #007bff50;
-}
-
-
-
-.calc_month {
-    display: flex;
-    flex-direction: row;
-}
-
-.calc_month_form {
-    width: 90%;
-    padding-right: 10px;
-}
-
-.calc_month_select {
-    width: 100%;
-    height: 35px;
-    border: #8c8c8c 2px solid;
-    border-radius: 4px;
-    padding: 5px;
-    font-size: 16px;
-    font-weight: 500;
-    text-align: center;
-    cursor: pointer;
-}
-
-.input_span {
-    text-align: center;
-    padding-top: 7px;
-}
-
-
-
-.calc_output {
-    height: 100%;
-    width: 30%;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-
-    padding: 20px;
-}
-
-.calc_output_header {
-    text-align: center;
-    color: #4a4a4a;
-}
-
-.calc_output_block {
-    height: fit-content;
-}
-
-.calc_output_name{
-    font-size: 14px;
-    font-weight: 600;
-    text-align: left;
-    color: #9e9e9e;
-}
-
-.calc_output_value {
-    font-size: 18px;
-    text-align: left;
-    color: #016CBC;
-
-}
-
-.calc_footer{
-    margin-top: 15px;
-    font-size: 14px;
-    font-weight: 500;
-    color: #9e9e9e;
-}
-
- */
-
-
-
-/* 
-.service_block {
-    display: flex;
-    flex-direction: column;
-    margin: 20px 40px;    
-} */
-/* Окно контента */
-
-/* Стилизация наполнения контента */
-/* .service_block h2 {
-    font-size: 30px;
-    font-weight: 700;
-    color: rgb(220, 0, 0);
-    text-decoration: none; 
-    line-height: 1;
-}
-
-.service_block ul li {
-    font-size: 18px;
-    font-weight: 400;
-    color: rgb(0, 0, 0);
-    padding: 0px;
-    line-height: 1.1;
-} */
-/* Стилизация наполнения контента */
-
-
-
 /* Контакти */
 .contacts {
     width: auto;
@@ -791,7 +473,6 @@ input[type=number]:focus {
     width: 100%;
     max-width: 1200;
     text-align: center;
-    /* margin: 0 20px; */
     padding: 30px 0;
 }
 /* Контакти */
@@ -809,7 +490,6 @@ input[type=number]:focus {
     margin-left: 50px;
     font-size: 40px;
     font-weight: 700;
-    /* color: rgb(220, 0, 0); */
     color: #4ba2ff;
     transition: color .2s linear;
     text-decoration: none; 
@@ -817,15 +497,12 @@ input[type=number]:focus {
 }
 .ending_logo::after {
     content: "Кредитуємо для вас";
-    /* display: block; */
     width: 60%;
     position: absolute;
     margin-top: 10px;
-    /* padding-left: 100px; */
     color: rgb(255, 255, 255);
     top: 100%;
     right: 0;
-    z-index: 100;
     font-size: 17px;
     line-height: .9;
     text-align: right;
@@ -1486,6 +1163,10 @@ input[type=number]:focus {
     }
     .header_slogan {
         display: none;
+    }
+
+    .header.fixed .nav_toggle {
+        top: 16px;
     }
 
     .nav_toggle {
