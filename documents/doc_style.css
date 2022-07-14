@@ -18,6 +18,10 @@ h1,h2,h3,h4,h5,h6 {
     box-sizing: border-box;
 }
 
+.none {
+    display: none;
+}
+
 .container {
     width: 100%;
     max-width: 1200px;
@@ -65,7 +69,6 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .intro_logo { 
-    /* color:rgb(220, 0, 0); */
     color: #016CBC;
     text-align: center;
     font-size:80px;
@@ -112,16 +115,27 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .header_inner {
+    width: 100%;
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
     padding-right: 10px;
 }
 
+.header_logo_box {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+}
+
 .header_logo {
+    
     margin-left: 30px;
     font-size: 30px;
     font-weight: 700;
     
+    text-align: left;
     color: #007aff;
     transition: color .2s linear;
     text-decoration: none; 
@@ -135,20 +149,19 @@ h1,h2,h3,h4,h5,h6 {
 
 .header_logo:hover {
     color: rgb(255, 255, 255);
-    /* color: #016CBC; */
 }
 
 .nav {
     font-size: 17px;
     text-transform: uppercase;
-    margin: 15px 0 0 0;
-    
+    margin: 15px 0 5px 0;  
 }
 
 .nav.active {
     display: flex;
     flex-direction: column;
     margin: 40px 10px 0 0;
+    text-align: center;
 }
 
 .nav.active .nav_link{
@@ -203,7 +216,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .header.fixed .nav_toggle{
-    top: 20px;
+    top: 30px;
 }
 
 /* превратить в крестик,если актив есть*/
@@ -338,8 +351,12 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .section_about {
-    padding-top: 100px;
+    padding-top: 190px;
     width: 100%;
+}
+
+.section_upload{
+    min-height: 70vh;
 }
 
 .section_header {
@@ -380,15 +397,6 @@ table tbody tr td {
 }
 
 
-
-/* ABOUT logo*/
-/* .about_logo {
-    font-size: 30px;
-    font-weight: 700;
-    color: #4ba2ff;
-    text-decoration: none; 
-    line-height: 0;
-} */
 
 /* Services */
 .service_header {
@@ -447,8 +455,64 @@ table tbody tr td {
 }
 /* кнопки навигации */
 
+
+/* section_upload */
+.doc_links {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+
+.doc_links_item{
+    width: auto;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.doc_iframe {
+    max-width: 500px;
+    width: 90%;
+
+    text-decoration: none;
+    cursor: pointer;
+    /* background-color: #005aa966; */
+    padding: 15px;
+    border-bottom: 1px solid rgb(216, 216, 216);
+    transition: all .2s linear;
+}
+
+.doc_iframe:hover {
+    background-color: rgb(232, 232, 232);
+    box-shadow: 10px 5px 5px #767676;
+    border-radius: 5px;
+}
+
+.doc_upload {
+    width: 40px;
+    margin: 0 25px;
+    
+}
+
+.doc_upload a img {
+    transition: all .1s linear;
+}
+
+.doc_upload a img:hover {
+    transform: scale(1.2);
+}
+
+.iframe_window {
+    margin: 50px 0 50px 0;
+    border-bottom: 3px solid rgb(159, 159, 159);
+}
+/* section_upload */
+
+
 /* Окно контента */
-.content {
+/* .content {
     background-color: #ffffff;
     padding: 30px;
 }
@@ -498,10 +562,9 @@ table tbody tr td {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    /* align-items: center; */
     padding: 0 30px 0 50px;
-}
-
+} */
+/* 
 .range_uah {
     margin-top: 15px;
 }
@@ -631,11 +694,11 @@ input[type=number]:focus {
 .calc_output {
     height: 100%;
     width: 30%;
-    /* background-color: #4ba2ff; */
+
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    /* align-items: center; */
+
     padding: 20px;
 }
 
@@ -669,26 +732,20 @@ input[type=number]:focus {
     color: #9e9e9e;
 }
 
+ */
 
 
 
-
-
-
-
-
-
-
-
+/* 
 .service_block {
     display: flex;
     flex-direction: column;
     margin: 20px 40px;    
-}
+} */
 /* Окно контента */
 
 /* Стилизация наполнения контента */
-.service_block h2 {
+/* .service_block h2 {
     font-size: 30px;
     font-weight: 700;
     color: rgb(220, 0, 0);
@@ -702,7 +759,7 @@ input[type=number]:focus {
     color: rgb(0, 0, 0);
     padding: 0px;
     line-height: 1.1;
-}
+} */
 /* Стилизация наполнения контента */
 
 
@@ -1007,9 +1064,11 @@ input[type=number]:focus {
         display: none;
     }
 
-    /* .nav_2 .active {
-        display: flex;
-    } */
+    .nav.active {
+
+        margin: 0 10px 0 0;
+        /* text-align: center; */
+    }
 
     .nav_toggle {
         display: block;
@@ -1039,34 +1098,10 @@ input[type=number]:focus {
         width: 80%;
     }
     
-    .client {
-        max-width: 190px;
-    }
-
-    .dropbtn {
-        padding: 16px;
-        font-size: 14px;
-        font-weight: 600;
+    .section_about {
+        padding-top: 130px;
     }
     
-    .dropbtn:hover  {
-        font-weight: 700;
-        font-size: 16px;
-    }
-    
-    .dropbtn.active {
-        font-size: 16px;
-    }
-
-    .service_block h2 {
-        font-size: 22px;
-        font-weight: 600;
-    }
-    
-    .service_block ul li {
-        font-size: 15px;
-        font-weight: 350;
-    }
 
     .calc_header {
         font-size: 16px;

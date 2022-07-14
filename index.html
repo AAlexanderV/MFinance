@@ -17,13 +17,13 @@
             <header class ="header" id="header">
                 <div class="container">
                     <div class="header_inner">
-                        <div><a class="header_logo" href="#about">"МАРИН-ФІНАНС"</a></div>
+                        <div><a class="header_logo" href="#main_image">"МАРИН-ФІНАНС"</a></div>
                         
                         <!-- Nav-main -->
                         <nav class="nav">
                             <a class="nav_link" href="#about">Про нас</a>
-                            <a class="nav_link" href="#services">Кредитний калькулятор</a>
-                            <a class="nav_link" href="#blog">Документи</a>
+                            <a class="nav_link" href="#calc">Кредитний калькулятор</a>
+                            <a class="nav_link" href="documents/documents_main.html">Документи</a>
                             <a class="nav_link" href="#contacts">Контакти</a>
                         </nav>
 
@@ -200,7 +200,7 @@
 
 
 
-                    <table>
+                    <!-- <table>
                         <tr>
                             <th colspan="3" style="background-color: #cecece">
                                 Перелік обов’язкових документів
@@ -293,35 +293,31 @@
                             <td class="text_tocenter"><a href="/finorgs#license"><u><b>Переглянути</b></u></a></td>
                         </tr> 
 
-                    </table>
+                    </table> -->
                 </div>
             </div>
         </section>
 
         <!-- calculator -->
-        <section class="section" id="services">
+        <!-- <section class="section" id="services"> -->
+        <section class="section" id="calc">
             <div class="container">
                 <div class="section_header">
                     <h2>Кредитний калькулятор</h2>
                 </div>
-                <div class="section_services">
+                <div class="section_calc">
 
                     <div class="content">
-                        <div class="dropdown-content" id="tab_1">
+                        <!-- <div class="dropdown-content" id="tab_1"> -->
+                        <div class="content_box">
                             <div class="calc_header">Розрахуйте найзручніший для Вас варіант кредитування:</div>
-
-
-
                             <div class="calc_inner">
 
-
-
                                 <div class="calc_input">
-
                                     <div class="calc_inputLeft">
 
                                         <div class="range_uah">
-                                            <input class="range_uah_input" type="range" id="range_uah" name="range_uah" min="300" max="100000" step="100" value="25000">
+                                            <input class="range_uah_input" type="range" id="range_uah" name="range_uah" min="300" max="100000" step="100" value="50000">
                                             <div class="marking">
                                                 <div class="mark_row">
                                                     <div class="field__mark">300</div>
@@ -336,7 +332,7 @@
                                         </div>
 
                                         <div class="range_month">
-                                            <input class="range_month_input" type="range" id="range_month_input" name="range_month" min="3" max="6" step="1" value="5">
+                                            <input class="range_month_input" type="range" id="range_month_input" name="range_month" min="3" max="6" step="1" value="3">
                                             <div class="marking">
                                                 <div class="mark_row mrg_left">
                                                     <div class="field__mark fs20">3</div>
@@ -353,7 +349,7 @@
                                         <div class="calc_amount">
                                             <div class="calc_inputRight_heading">СУМА КРЕДИТУ</div>
                                             <div class="calc_uah">
-                                                <input class="uah_input" type="number" min="300" max="100000" value="300" step="100">
+                                                <input class="uah_input" type="number" min="300" max="100000" value="50000" step="100">
                                                 <span class="input_span">ГРН</span>
                                             </div>
                                         </div>
@@ -379,33 +375,29 @@
                                     
                                     <div class="calc_output_block">
                                         <div class="calc_output_name">Щомісячний платіж з урахуванням комісії</div>
-                                        <div class="calc_output_value">2040 грн</div>
+                                        <div class="calc_output_value" id="monthlyFee">0 грн</div>
                                     </div>
 
                                     <div class="calc_output_block">
                                         <div class="calc_output_name">Реальна % ставка</div>
-                                        <div class="calc_output_value">8,18 %</div>
+                                        <div class="calc_output_value" id="prcntRate">0 %</div>
                                     </div>
 
                                     <div class="calc_output_block">
                                         <div class="calc_output_name">Загальні витрати на споживчий кредит</div>
-                                        <div class="calc_output_value">200 грн</div>
+                                        <div class="calc_output_value" id="expenses">0 грн</div>
                                     </div>
 
                                     <div class="calc_output_block">
                                         <div class="calc_output_name">Загальна сума кредиту</div>
-                                        <div class="calc_output_value">10200 грн</div>
+                                        <div class="calc_output_value" id="totalCredit">0 грн</div>
                                     </div>
-                                </div>
-
-
+                                </div> <!-- calc_output -->
                             </div><!-- calc_inner -->
 
-
                             <div class="calc_footer"><span style="color: rgb(220, 0, 0);">*</span> Приклад розрахунку умов по кредиту має виключно інформаційний характер і не є публічною офертою.</div>
-                        
-                        
-                        </div>
+
+                        </div> <!-- content_box -->
                     </div>
                 </div>
             </div>

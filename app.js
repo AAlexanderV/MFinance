@@ -54,22 +54,73 @@ nav_links.forEach(function (item) {
 // КАЛЬКУЛЯТОР
 
 // Ползунок UAH
-let rangeUah = document.querySelector(".range_uah_input");
+let uahRange = document.querySelector(".range_uah_input");
+let uahInput = document.querySelector(".uah_input");
 
-rangeUah.addEventListener(
-  "change",
+window.onload = function () {
+  recalc();
+};
+
+uahRange.addEventListener(
+  "input",
   function () {
     /* После отжатия кнопки мышки с ползунка */
-    console.log(this.value);
+    uahInput.value = this.value;
+    recalc();
   },
   false
 );
 
-// range.addEventListener("input", function () {
-//     /* Во время движения ползунка */
-//     console.log(this.value);
-//   },
-//   false
-// );
+uahInput.addEventListener(
+  "input",
+  function () {
+    /* После отжатия кнопки мышки с ползунка */
+    uahRange.value = this.value;
+    recalc();
+  },
+  false
+);
 
 // Ползунок months
+let mnthRange = document.querySelector(".range_month_input");
+let mnthInput = document.querySelector(".calc_month_select");
+
+mnthRange.addEventListener(
+  "input",
+  function () {
+    /* После отжатия кнопки мышки с ползунка */
+    mnthInput.value = this.value;
+    recalc();
+  },
+  false
+);
+
+mnthInput.addEventListener(
+  "input",
+  function () {
+    /* После отжатия кнопки мышки с ползунка */
+    mnthRange.value = this.value;
+    recalc();
+  },
+  false
+);
+
+//OUTPUT
+let monthlyFee = document.getElementById("monthlyFee");
+let prcntRate = document.getElementById("prcntRate");
+let creditExpenses = document.getElementById("expenses");
+let totalCredit = document.getElementById("totalCredit");
+
+function recalc() {
+  let loanBody = Number(uahInput.value);
+  let percent = 7;
+  let expenses = (loanBody / 100) * percent;
+  let total = expenses + loanBody;
+  let perMonth = total / mnthInput.value;
+
+  prcntRate.innerHTML = `${percent} %`;
+  creditExpenses.innerHTML = `${expenses} грн`;
+  // totalCredit.innerHTML = `${total} грн`;
+  totalCredit.innerHTML = `${loanBody + expenses} грн`;
+  monthlyFee.innerHTML = `${Math.round(perMonth)} грн`;
+}
