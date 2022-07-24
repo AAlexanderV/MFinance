@@ -157,7 +157,7 @@
                             <td class="value">1 556 102 0000 071524</td>
                         </tr>
                 
-                        <tr>
+                        <tr  id="licence">
                             <th colspan="2" style="background-color: #cecece">
                                 Свідоцтво Нацфінпослуг або НКЦПФР про реєстрацію фінансової установи
                             </th>
@@ -183,7 +183,7 @@
                             <td class="value">1348</td>
                         </tr>
                 
-                        <tr id="license">
+                        <tr>
                             <th colspan="2" style="background-color: #cecece">
                                 Ліцензія
                             </th>
@@ -207,7 +207,7 @@
         <section class="section" id="calc">
             <div class="container">
                 <div class="section_header">
-                    <h2>Кредитний калькулятор</h2>
+                    <h2 style="padding: 0 10px">Кредитний калькулятор</h2>
                 </div>
                 <div class="section_calc">
 
@@ -221,28 +221,31 @@
                                     <div class="calc_inputLeft">
 
                                         <div class="range_uah">
-                                            <input class="range_uah_input" type="range" id="range_uah" name="range_uah" min="300" max="100000" step="100" value="50000">
+                                            <input class="range_uah_input" type="range" id="range_uah" name="range_uah" min="27000" max="1500000" step="1000" value="500000">
                                             <div class="marking">
                                                 <div class="mark_row">
-                                                    <div class="field__mark">300</div>
+                                                    <div class="field__mark">27 тис</div>
                                                 </div>
                                                 <div class="mark_row text-center">
-                                                    <div class="field__mark">50 000</div>
+                                                    <div class="field__mark">770 тис</div>
                                                 </div>
                                                 <div class="mark_row text-right">
-                                                    <div class="field__mark">100 000</div>
+                                                    <div class="field__mark">1,5 млн</div>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="range_month">
-                                            <input class="range_month_input" type="range" id="range_month_input" name="range_month" min="3" max="6" step="1" value="3">
+                                            <input class="range_month_input" type="range" id="range_month_input" name="range_month" min="1" max="60" step="1" value="24">
                                             <div class="marking">
                                                 <div class="mark_row mrg_left">
-                                                    <div class="field__mark fs20">3</div>
+                                                    <div class="field__mark fs20">1</div>
+                                                </div>
+                                                <div class="mark_row text-center">
+                                                    <div class="field__mark fs20">30</div>
                                                 </div>
                                                 <div class="mark_row text-right mrg_right">
-                                                    <div class="field__mark fs20">6</div>
+                                                    <div class="field__mark fs20">60</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -250,24 +253,19 @@
                                     </div>
 
                                     <div class="calc_inputRight">
+
                                         <div class="calc_amount">
                                             <div class="calc_inputRight_heading">СУМА КРЕДИТУ</div>
                                             <div class="calc_uah">
-                                                <input class="uah_input" type="number" min="300" max="100000" value="50000" step="100">
+                                                <input class="uah_input" type="number" min="27000" max="1500000" value="500000" step="1000">
                                                 <span class="input_span">ГРН</span>
                                             </div>
                                         </div>
+
                                         <div class="calc_term">
                                             <div class="calc_inputRight_heading">СТРОК КРЕДИТУ</div>
                                             <div class="calc_month">
-                                                <form class="calc_month_form">
-                                                    <select class="calc_month_select" id="month" name="month">
-                                                        <option value="3">3</option>
-                                                        <option value="4">4</option>
-                                                        <option value="5">5</option>
-                                                        <option value="6">6</option>
-                                                    </select>
-                                                </form>
+                                                <input class="month_input" type="number" min="1" max="60" value="24" step="1">
                                                 <span class="input_span">МІС</span>
                                             </div>
                                         </div>
@@ -288,7 +286,7 @@
                                     </div>
 
                                     <div class="calc_output_block">
-                                        <div class="calc_output_name">Загальні витрати на споживчий кредит</div>
+                                        <div class="calc_output_name">Загальні витрати на споживчий кредит, включаючи комісію за видачу кредиту</div>
                                         <div class="calc_output_value" id="expenses">0 грн</div>
                                     </div>
 

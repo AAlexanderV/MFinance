@@ -528,6 +528,7 @@ input[type=number]:focus {
 .calc_month {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
 }
 
 .calc_month_form {
@@ -535,7 +536,7 @@ input[type=number]:focus {
     padding-right: 10px;
 }
 
-.calc_month_select {
+.month_input {
     width: 100%;
     height: 35px;
     border: #8c8c8c 2px solid;

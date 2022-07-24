@@ -83,7 +83,7 @@ uahInput.addEventListener(
 
 // Ползунок months
 let mnthRange = document.querySelector(".range_month_input");
-let mnthInput = document.querySelector(".calc_month_select");
+let mnthInput = document.querySelector(".month_input");
 
 mnthRange.addEventListener(
   "input",
@@ -113,14 +113,13 @@ let totalCredit = document.getElementById("totalCredit");
 
 function recalc() {
   let loanBody = Number(uahInput.value);
-  let percent = 7;
-  let expenses = (loanBody / 100) * percent;
+  let percent = 3;
+  let expenses = (loanBody * percent * mnthInput.value) / 100 + 1000;
   let total = expenses + loanBody;
   let perMonth = total / mnthInput.value;
 
-  prcntRate.innerHTML = `${percent} %`;
-  creditExpenses.innerHTML = `${expenses} грн`;
-  // totalCredit.innerHTML = `${total} грн`;
-  totalCredit.innerHTML = `${loanBody + expenses} грн`;
-  monthlyFee.innerHTML = `${Math.round(perMonth)} грн`;
+  monthlyFee.innerHTML = `${Math.round(perMonth)} грн`; //Щомісячний платіж з урахуванням комісії
+  prcntRate.innerHTML = `${percent * 12} %`; //Реальна % ставка
+  creditExpenses.innerHTML = `${expenses} грн`; //Загальні витрати на споживчий кредит
+  totalCredit.innerHTML = `${total} грн`; //Загальна сума кредиту
 }
