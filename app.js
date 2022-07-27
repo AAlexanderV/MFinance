@@ -117,9 +117,11 @@ function recalc() {
   // Ограничение для вводимого размера кредита
   if (Number(uahInput.value) > 1500000) {
     loanBody = 1500000;
-  } else if (Number(uahInput.value) < 27000) {
-    loanBody = 27000;
-  } else {
+  }
+  // else if (Number(uahInput.value) < 27000) {
+  //   loanBody = 27000;
+  // }
+  else {
     loanBody = Number(uahInput.value);
   }
   uahInput.value = loanBody;
@@ -133,12 +135,42 @@ function recalc() {
 
   let percent = 3; //monthly
   let expenses = (loanBody * percent * mnthInput.value) / 100;
+  let comission = (loanBody * 2.5) / 100;
   let total = expenses + loanBody;
   let perMonth = total / mnthInput.value;
 
-  monthlyFee.innerHTML = `${Math.round(perMonth)} грн`; //Щомісячний платіж з урахуванням комісії
-  prcntRate.innerHTML = `${percent * 12} %`; //Реальна % ставка
-  creditExpenses.innerHTML = `${expenses} грн`; //Загальні витрати на споживчий кредит
-  one_timeComissions.innerHTML = `${(loanBody * 2.5) / 100} грн`; //Одноразові комісії та платежі
-  totalCredit.innerHTML = `${total} грн`; //Загальна сума кредиту
+  //Щомісячний платіж з урахуванням комісії
+  monthlyFee.innerHTML =
+    loanBody >= 27000 ? `${intSeparator(Math.round(perMonth))} грн` : `--- грн`;
+
+  //Реальна % ставка
+  prcntRate.innerHTML = loanBody >= 27000 ? `${percent * 12} %` : `--- %`;
+
+  //Загальні витрати на споживчий кредит
+  creditExpenses.innerHTML =
+    loanBody >= 27000 ? `${intSeparator(expenses + comission)} грн` : `--- грн`;
+
+  //Одноразові комісії та платежі
+  one_timeComissions.innerHTML =
+    loanBody >= 27000 ? `${intSeparator(comission)} грн` : `--- %`;
+
+  //Загальна сума кредиту
+  totalCredit.innerHTML =
+    loanBody >= 27000 ? `${intSeparator(total + comission)} грн` : `--- %`;
+}
+
+function intSeparator(int) {
+  return int
+    .toString(10)
+    .split("")
+    .reverse()
+    .map((value, index, array) => {
+      if ((index + 1) % 3 === 0 && index + 1 !== array.length) {
+        return " " + value;
+      } else {
+        return value;
+      }
+    })
+    .reverse()
+    .join("");
 }
