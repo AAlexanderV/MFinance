@@ -109,17 +109,36 @@ mnthInput.addEventListener(
 let monthlyFee = document.getElementById("monthlyFee");
 let prcntRate = document.getElementById("prcntRate");
 let creditExpenses = document.getElementById("expenses");
+let one_timeComissions = document.getElementById("comissions");
 let totalCredit = document.getElementById("totalCredit");
 
 function recalc() {
-  let loanBody = Number(uahInput.value);
-  let percent = 3;
-  let expenses = (loanBody * percent * mnthInput.value) / 100 + 1000;
+  let loanBody;
+  // Ограничение для вводимого размера кредита
+  if (Number(uahInput.value) > 1500000) {
+    loanBody = 1500000;
+  } else if (Number(uahInput.value) < 27000) {
+    loanBody = 27000;
+  } else {
+    loanBody = Number(uahInput.value);
+  }
+  uahInput.value = loanBody;
+
+  // Ограничение для месяцев
+  if (mnthInput.value > 60) {
+    mnthInput.value = 60;
+  } else if (mnthInput.value < 1) {
+    mnthInput.value = 1;
+  }
+
+  let percent = 3; //monthly
+  let expenses = (loanBody * percent * mnthInput.value) / 100;
   let total = expenses + loanBody;
   let perMonth = total / mnthInput.value;
 
   monthlyFee.innerHTML = `${Math.round(perMonth)} грн`; //Щомісячний платіж з урахуванням комісії
   prcntRate.innerHTML = `${percent * 12} %`; //Реальна % ставка
   creditExpenses.innerHTML = `${expenses} грн`; //Загальні витрати на споживчий кредит
+  one_timeComissions.innerHTML = `${(loanBody * 2.5) / 100} грн`; //Одноразові комісії та платежі
   totalCredit.innerHTML = `${total} грн`; //Загальна сума кредиту
 }
